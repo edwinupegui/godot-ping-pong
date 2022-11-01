@@ -11,7 +11,7 @@ func _physics_process(delta):
 	move_and_slide(direction * speed)
 	
 func _get_direction():
-	if abs(ball.position.y - position.y) > 10:
+	if abs(ball.position.y - position.y) > 55:
 		if ball.position.y > position.y:
 			return 1
 		else:

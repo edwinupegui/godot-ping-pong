@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Ball
+
 var speed = 0.0
 var direction = Vector2.ZERO
 var is_moving = false

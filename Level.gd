@@ -1,5 +1,12 @@
 extends Node2D
 
+var PlayerScore = 0
+var EnemyScore = 0
+
+func _process(delta):
+	$MarcadorPlayer.text = str(PlayerScore)
+	$MarcadorOponente.text = str(EnemyScore)
+
 func _restart_game():
 	$Ball.is_moving = false
 	$Ball.direction = Vector2.ZERO
@@ -8,8 +15,11 @@ func _restart_game():
 
 
 func _on_ArcoPlayer_body_entered(body):
-	_restart_game()
+	if body is Ball:
+		EnemyScore += 1
+		_restart_game()
 
-
-func _on_ArcoOponentes_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	_restart_game()
+func _on_ArcoOponentes_body_entered(body):
+	if body is Ball:
+		PlayerScore += 1
+		_restart_game()
