@@ -6,10 +6,14 @@ var is_moving = false
 
 func _ready():
 	randomize()
-	speed = 300
+	reset_ball()
+
+func reset_ball():
+	speed = 400
 	direction.x = [-1, 1][randi() % 2]
 	direction.y = [-0.8, 0.8][randi() % 2]
 	is_moving = true
+	
 
 func _physics_process(delta):
 	if is_moving:
