@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Platzi-ping-pong"
+config/name="Platzi Pong"
 run/main_scene="res://Level.tscn"
 config/icon="res://icon.png"
 

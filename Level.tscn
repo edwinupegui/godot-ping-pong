@@ -90,6 +90,9 @@ custom_colors/font_color = Color( 0.913725, 0.686275, 0.25098, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Marcador Oponente"
 
+[node name="RestartTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="ArcoPlayer" to="." method="_on_ArcoPlayer_body_entered"]
 [connection signal="area_shape_entered" from="ArcoOponentes" to="." method="_on_ArcoOponentes_area_shape_entered"]
 [connection signal="body_entered" from="ArcoOponentes" to="." method="_on_ArcoOponentes_body_entered"]
+[connection signal="timeout" from="RestartTimer" to="Ball" method="_on_RestartTimer_timeout"]
